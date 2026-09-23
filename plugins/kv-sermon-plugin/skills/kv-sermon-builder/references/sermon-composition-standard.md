@@ -65,6 +65,35 @@ Prefer passage-derived movement over clever alliteration or imposed symmetry.
 
 Use explanation before application. Do not apply a text whose meaning has not been established.
 
+
+## Manuscript Prose Rhythm
+
+Use this mode hierarchy:
+
+- **Full manuscript:** paragraph-dominant.
+- **Hybrid manuscript:** paragraph-dominant with selective structural or preacher cues.
+- **Speaking outline:** line-dominant.
+
+For full and hybrid manuscripts, developed exposition, theological significance, application, transitions, and conclusions should appear mainly in connected paragraphs of roughly 3-6 sentences with varied sentence length. A hybrid manuscript should visually resemble a manuscript with structural cues, not a speaking outline with occasional prose. Do not label or format it as "hybrid manuscript / preaching outline" unless the user explicitly requests both products.
+
+Do not place each ordinary sentence on its own line. Repeated one-sentence paragraphs should trigger a normalization pass unless the separation is intentionally rhetorical. When three or more adjacent short declarative or imperative paragraphs appear in sequence, consolidate them into a coherent spoken paragraph unless they are the single intentional stacked refrain or climactic sequence for that major section. Do not preserve multiple stacked refrains within the same major section.
+
+Use a standalone short sentence or fragment only when it serves a clear rhetorical function such as emphasis, refrain, transition, or climactic response. Do not let stacked imperatives, fragment sequences, or repeated forms such as `Not X. Not Y. Not Z.` become the ordinary cadence of the sermon.
+
+## Editorial Prose Acceptance Workflow
+
+For full and hybrid manuscripts, separate composition from prose normalization.
+
+1. Complete the sermon draft first. Preserve passage logic, Main Idea, Goal, movement order, cautions, application, and Christ/gospel connection.
+2. Perform a second editorial pass on the introduction, each movement, each application section, every transition, and the conclusion.
+3. Merge adjacent short paragraphs when they advance one thought. A blank line should indicate a real paragraph or structural boundary, not merely a pause in delivery.
+4. Convert recurring fragments, stacked imperatives, and sentence-per-line exposition into connected spoken prose. Keep isolated lines only when their visual separation is genuinely rhetorical.
+5. Run a stacked-sequence scan. Any run of three or more adjacent short declarative or imperative paragraphs must be merged unless it is the single intentional stacked refrain or climactic sequence for that major section.
+6. Re-read each section as if it were printed in a manuscript. If the section would look more like a speaking outline, slide deck, teleprompter stack, or transcript than ordinary prose, rewrite the section before delivery.
+7. Do not calculate paragraph percentages during live generation. Regression scoring may use numeric thresholds externally, but the Builder should follow this editorial workflow rather than perform arithmetic on its own draft.
+
+A full or hybrid manuscript is not ready to return until this second pass is complete.
+
 ## Application
 
 Application should be passage-specific rather than generic advice.

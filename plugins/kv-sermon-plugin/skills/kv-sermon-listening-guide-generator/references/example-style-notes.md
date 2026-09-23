@@ -42,6 +42,8 @@ Student version:
 Answer key:
 `God’s presence is no longer confined to a __________ (place).`
 
+When both versions are requested, preserve a one-to-one mapping across the entire guide. If the Student Version contains 8 blanks, the Answer Key must contain exactly 8 corresponding keyed answers in the same locations and order. Do not shorten the key by answering only the main blanks.
+
 ## Response Prompts
 
 Use 2 to 4 response prompts. Prefer categories such as:

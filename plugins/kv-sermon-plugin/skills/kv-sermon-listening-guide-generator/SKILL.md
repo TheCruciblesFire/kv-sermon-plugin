@@ -1,6 +1,6 @@
 ---
 name: kv-sermon-listening-guide-generator
-description: use this skill to convert a completed sermon manuscript, hybrid sermon outline, preaching notes, or sermon-prep handoff into a concise student-facing sermon listening guide and, when requested, a matching answer key. trigger when a user asks for a sermon handout, listening guide, fill-in-the-blank handout, church handout, audience note sheet, sermon notes page, or answer-key version from already-developed sermon content. use when source preservation, sparse meaningful blanks, key scripture references, main movements, learner response, notes space, and print usability matter. do not use to create sermons, slide decks, devotionals, course lessons, research notes, or full student workbooks unless explicitly requested.
+description: use this skill to convert a completed sermon manuscript, hybrid sermon outline, preaching notes, or sermon-prep handoff into a concise student-facing sermon listening guide and, when requested, a matching answer key. trigger when a user asks for a sermon handout, listening guide, fill-in-the-blank handout, church handout, audience note sheet, sermon notes page, or answer-key version from already-developed sermon content. when the user requests both a guide and answer key, both outputs are mandatory and every student blank must map to an explicit answer. use when source preservation, sparse meaningful blanks, key scripture references, main movements, learner response, notes space, and print usability matter. do not use to create sermons, slide decks, devotionals, course lessons, research notes, or full student workbooks.
 ---
 
 # KV Sermon Listening Guide Generator
@@ -28,6 +28,55 @@ When the user asks for a sermon handout or listening guide, provide:
 
 If the user requests only one version, produce only that version.
 
+### Output Modes
+
+Choose exactly one output mode before drafting:
+
+1. **Student-only mode** — use only when the user requests a listening guide/handout without an answer key.
+2. **Answer-key-only mode** — use only when the user explicitly requests only the answer key for an already-defined guide.
+3. **Paired rendering mode** — mandatory whenever the user asks for both a guide and an answer key, a guide "with" an answer key, student and teacher/key versions, or equivalent paired wording. This mode overrides the single-version modes.
+
+### Paired Rendering Mode
+
+Treat the Student Listening Guide and Answer Key as **two views of one canonical guide**, not as two separate writing tasks.
+
+Before producing any user-visible output:
+
+1. Build one canonical guide structure containing the title, texts, Big Idea, movements, guided notes, response prompts, and notes section.
+2. Build one ordered **blank map** for that structure. Assign each blank an internal identifier in sequence (`B01`, `B02`, `B03`, ...), and record exactly one answer for each identifier. Do not show these identifiers to the user.
+3. Freeze the canonical wording and blank positions. After this point, do not independently rewrite, reorder, add, or remove material in either version.
+4. Render the Student Listening Guide from the frozen structure by showing each mapped blank as `__________` with no answer exposed.
+5. Render the Answer Key from the same frozen structure by showing each mapped blank as `__________ (answer)`.
+6. Verify that both rendered versions are complete before beginning the final response.
+
+When paired rendering mode is active, the final response must use this exact outer shell and order:
+
+```markdown
+# Student Listening Guide
+
+[complete student version]
+
+# Answer Key
+
+[complete matching answer-key version]
+```
+
+Do not output only one half and plan to add the other later. Do not begin the final response until both complete renderings exist. Do not omit either half for brevity, token economy, print length, or because one version appears self-explanatory.
+
+### Paired-Output Completion Gate
+
+A paired response is complete only if all of the following are true:
+
+- `# Student Listening Guide` is present first.
+- `# Answer Key` is present second.
+- Both sections contain the same sermon title, movement order, Scripture references, guided-note wording, response prompts, and blank positions.
+- The Student Listening Guide exposes no answers.
+- The Answer Key contains exactly one explicit answer for every student blank.
+- The number and order of blanks are identical in both sections.
+- No extra keyed answer exists without a corresponding student blank.
+
+If any item fails, repair the pair before returning the response. A one-section result is a failed paired render and must never be delivered as completion.
+
 ## Workflow
 
 1. Identify the sermon title, subtitle, primary text, supporting texts, main idea, slide cues if present, and sermon movements.
@@ -36,8 +85,10 @@ If the user requests only one version, produce only that version.
 4. Choose blanks sparingly. Use blanks to reinforce the main idea, key contrast, theological term, or repeated sermon phrase.
 5. Add a brief response section with 2 to 4 prompts tied to the sermon’s burden.
 6. Add a simple notes section if the guide is likely to be printed for live listening.
-7. Create the answer-key version only when requested.
-8. Do a final check for source faithfulness, adult tone, print usability, and answer-key separation.
+7. Select the output mode before rendering.
+8. In paired rendering mode, create the canonical guide and ordered blank map first, then render both complete views from that same frozen source. Do not render one version and then improvise the second.
+9. Run the Paired-Output Completion Gate on the fully rendered pair. Repair any mismatch or missing half before delivery.
+10. Do a final check for source faithfulness, adult tone, print usability, and answer-key separation.
 
 ## Fill-in Blank Rules
 
@@ -118,6 +169,12 @@ Before responding, verify:
 - The main idea has not been changed.
 - Blanks are sparse and meaningful.
 - The answer key does not leak into the student version.
+- If paired rendering mode is active, both complete renderings were built from one canonical guide and one ordered blank map before the response began.
+- The final response contains `# Student Listening Guide` first and `# Answer Key` second.
+- Never finalize a paired request with only one of those sections present. A single-section result is a failed render.
+- Every Student Listening Guide blank has exactly one explicit corresponding answer in the Answer Key, in the same order and wording context.
+- The Answer Key contains no unmatched extra answers or missing blanks.
+- No wording, movement, Scripture reference, response prompt, or blank position drifted between the two views.
 - The response prompts flow from the sermon.
 - No new claims were invented to fill space.
 - The result is printable, concise, and usable for live listening.
