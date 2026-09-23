@@ -1,0 +1,14 @@
+interface:
+  display_name: KV Multi Asset Throttle
+  short_description: Scope-control ministry bundle requests and stage downstream assets.
+  icon: route
+  brand_color: '#1f3a5f'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
