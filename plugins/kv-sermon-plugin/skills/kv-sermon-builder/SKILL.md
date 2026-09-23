@@ -140,6 +140,10 @@ Use for outlines, manuscripts, notes, or prior sermon material.
 
 - Preserve approved structure, Main Idea, Goal, controlling texts, and voice unless the user requests a rebuild or they materially conflict with the passage.
 - Revise only the requested scope.
+- Treat an explicit quantitative revision target such as "trim by about 20%", "cut 500 words", or "shorten to 30 minutes" as a required delivery constraint, not a soft preference.
+- For percentage-based trimming, aim near the requested center rather than making only cosmetic cuts. A request to trim by about 20% normally means the revised manuscript should be about 80% of the supplied manuscript's length.
+- Before delivery, perform a length sanity check against the supplied source. If the revision is plainly outside the requested target, continue trimming or restoring material until it is reasonably within range while preserving the protected sermon controls.
+- When a quantitative trim target competes with preservation, cut repetition, duplicated explanation, excess examples, redundant transitions, and secondary application detail before cutting the Main Idea, Goal, movement logic, textual cautions, governing exposition, or primary pastoral landing point.
 
 ### Topical or Thematic Sermon Mode
 
@@ -290,6 +294,7 @@ Match the output to the user's request.
 - A sermon outline is not a slide deck.
 - A speaking outline is not a full manuscript.
 - A revision request is not permission to rebuild everything.
+- A measurable revision target is part of the requested scope. Do not claim a percentage or word-count reduction has been achieved when the delivered revision is only cosmetically shorter.
 - A downstream handoff is not permission to generate the downstream asset.
 - A direct request for a devotional, course lesson/module, slide deck, media/social asset, workbook, leader guide, or publishing package must be classified and routed before drafting; do not fulfill it inside the core sermon lane.
 - One or two downstream assets do not become core-owned merely because the three-asset throttle does not apply. Domain ownership still controls.
@@ -333,7 +338,8 @@ Before returning a sermon product, verify:
 - full and hybrid manuscript prose has completed the required second-pass normalization and reads primarily as connected narrative prose rather than line-stacked outline cadence;
 - no supporting Skill procedure has been duplicated unnecessarily;
 - the Artifact Ownership Gate was applied before drafting;
-- no downstream product, sample, outline, starter, or partial draft has been created inside the core lane.
+- no downstream product, sample, outline, starter, or partial draft has been created inside the core lane;
+- when the user supplied an explicit percentage, word-count, or time-based revision target, the delivered revision is reasonably within that target rather than merely described as shorter.
 
 For regression validation of prose rhythm and output-mode boundaries, consult `references/regression-checks.md`.
 
