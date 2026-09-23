@@ -1,1 +1,20 @@
-
+{
+  "name": "kv-sermon-plugins",
+  "interface": {
+    "displayName": "KV Sermon Plugins"
+  },
+  "plugins": [
+    {
+      "name": "kv-sermon-plugin",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kv-sermon-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
