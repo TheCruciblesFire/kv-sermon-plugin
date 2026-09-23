@@ -1,0 +1,14 @@
+interface:
+  display_name: KV Passage Faithfulness Check
+  short_description: Audit ministry claims against a controlling biblical passage.
+  icon: book-open
+  brand_color: '#1f3a5f'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

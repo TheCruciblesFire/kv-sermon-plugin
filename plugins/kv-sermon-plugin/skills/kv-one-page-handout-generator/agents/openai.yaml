@@ -1,0 +1,13 @@
+interface:
+  display_name: KV One-Page Handout Generator
+  short_description: Create concise one-page student handouts from completed ministry
+    teaching.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

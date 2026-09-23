@@ -1,0 +1,15 @@
+interface:
+  display_name: KV Scripture Formatting Check
+  short_description: Audit and standardize Scripture quotations, references, CSB attribution,
+    and BLB link handling.
+  icon: book-open
+  color: blue
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

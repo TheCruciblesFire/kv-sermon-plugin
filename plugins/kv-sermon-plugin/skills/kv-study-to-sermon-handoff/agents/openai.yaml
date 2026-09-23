@@ -1,0 +1,12 @@
+interface:
+  display_name: KV Study to Sermon Handoff
+  short_description: Convert Study Engine material into bounded Sermon Builder handoffs.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

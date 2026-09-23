@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kv-sermon-plugin",
+  "version": "0.6.0",
+  "description": "KV Sermon Plugin Stage 6 regression candidate: passage-governed sermon construction and revision with bounded KV sermon support skills.",
+  "author": {"name": "Matt Parker"},
+  "keywords": ["sermon", "preaching", "scripture", "ministry", "sermon-audit", "sermon-handoff"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "KV Sermon Plugin",
+        "shortDescription": "Build passage-governed sermons with bounded KV sermon support skills.",
+        "longDescription": "Faithful sermon construction and revision from approved study or sermon material, with supporting skills for study-to-sermon handoff, sermon audit, passage faithfulness, source transparency, Scripture formatting, multi-asset scope control, sermon listening guides, one-page handouts, and print-ready packet polish. Full upstream passage study remains owned by the separate KV Study Plugin.",
+        "developerName": "Matt Parker",
+        "category": "Productivity",
+        "capabilities": [
+          "Sermon construction",
+          "Sermon revision and trimming",
+          "Study-to-sermon handoff",
+          "Sermon audit",
+          "Passage faithfulness audit",
+          "Source transparency audit",
+          "Scripture formatting QA",
+          "Multi-asset scope control",
+          "Sermon listening guides",
+          "One-page learner handouts",
+          "Print-ready packet polish"
+        ]
+      }
+    }
+  }
+}

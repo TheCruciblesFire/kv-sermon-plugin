@@ -1,0 +1,12 @@
+interface:
+  display_name: KV Print-Ready Packet Polish
+  short_description: Polishes completed ministry packets for clean print or PDF distribution.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
