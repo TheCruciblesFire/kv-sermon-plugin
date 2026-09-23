@@ -1,0 +1,12 @@
+{
+  "name": "kv-sermon-plugin",
+  "source": {
+    "source": "local",
+    "path": "./.codex/plugins/kv-sermon-plugin"
+  },
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Productivity"
+}
