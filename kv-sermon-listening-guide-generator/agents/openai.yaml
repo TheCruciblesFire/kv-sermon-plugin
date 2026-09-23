@@ -1,0 +1,13 @@
+interface:
+  display_name: KV Sermon Listening Guide Generator
+  short_description: Create concise sermon listening guides and answer keys from finished
+    sermon material.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

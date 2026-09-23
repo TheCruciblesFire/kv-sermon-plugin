@@ -1,0 +1,13 @@
+interface:
+  display_name: KV Sermon Builder
+  short_description: Build passage-governed sermons from approved study or sermon
+    material.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
