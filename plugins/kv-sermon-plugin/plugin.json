@@ -1,10 +1,19 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kv-sermon-plugin",
-  "version": "0.6.1",
-  "description": "KV Sermon Plugin Stage 6 regression candidate: passage-governed sermon construction and revision with bounded KV sermon support skills.",
-  "author": {"name": "Matt Parker"},
-  "keywords": ["sermon", "preaching", "scripture", "ministry", "sermon-audit", "sermon-handoff"],
+  "version": "1.0.0",
+  "description": "KV Sermon Plugin production release: passage-governed sermon construction and revision with bounded KV sermon support skills.",
+  "author": {
+    "name": "Matt Parker"
+  },
+  "keywords": [
+    "sermon",
+    "preaching",
+    "scripture",
+    "ministry",
+    "sermon-audit",
+    "sermon-handoff"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
