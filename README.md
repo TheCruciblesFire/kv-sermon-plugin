@@ -1,6 +1,6 @@
 # KV Sermon Plugin
 
-Production release: **1.0.0**
+Production release: **1.0.1**
 
 Runtime path: `plugins/kv-sermon-plugin/`  
 Marketplace manifest: `.agents/plugins/marketplace.json`
