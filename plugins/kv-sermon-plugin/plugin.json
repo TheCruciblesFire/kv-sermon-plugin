@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kv-sermon-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "KV Sermon Plugin production release: passage-governed sermon construction and revision with bounded KV sermon support skills.",
   "author": {
     "name": "Matt Parker"
