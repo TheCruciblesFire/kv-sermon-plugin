@@ -1,16 +1,26 @@
 ﻿# Regression Checks
 
 
+
+
 Use these checks when validating changes to sermon construction behavior. These are evaluator-facing regression criteria, not live drafting instructions. Keep quantitative thresholds here rather than asking the Sermon Builder to calculate them during generation.
+
+
 
 
 ## Narrative-Prose Preference
 
 
+
+
 **Prompt pattern:** Build a full or hybrid sermon from an approved handoff, preserving the Main Idea, Goal, movement order, and textual cautions.
 
 
+
+
 **PASS when:**
+
+
 
 
 - the sermon remains passage-governed and preserves the approved handoff;
@@ -25,13 +35,20 @@ Use these checks when validating changes to sermon construction behavior. These 
 - outside approved exemptions, there are no more than two consecutive one-sentence paragraphs;
 - no major section contains more than one intentionally stacked refrain or climactic short-line sequence;
 - blank lines represent real paragraph or structural breaks rather than sentence pacing;
+- paragraph boundaries track changes in thought or rhetorical function rather than shortness, emphasis, parallel wording, or anticipated vocal pauses;
+- ordinary argument units are reconstructed into connected prose before any selected standalone emphasis lines are restored;
+- the default editorial presumption is to merge related ordinary sentences, with isolation treated as an earned exception;
 - hybrid outputs are not labeled or formatted as "hybrid manuscript / preaching outline" unless both products were explicitly requested;
 - short standalone lines are occasional and clearly rhetorical;
 - transitions read as spoken narrative rather than slide bullets;
 - a thin speaking outline, when explicitly requested, may use short memory-jogging lines.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - full or hybrid manuscript prose is dominated by one-sentence paragraphs;
@@ -45,40 +62,93 @@ Use these checks when validating changes to sermon construction behavior. These 
 - hybrid mode is treated as outline cadence with occasional prose rather than manuscript prose with selective cues;
 - successive imperatives or `Not X. Not Y. Not Z.` patterns recur without a clear rhetorical reason;
 - blank lines are routinely used to pace individual sentences rather than form paragraphs;
+- short or emphatic sentences are isolated merely because they would receive a vocal pause, even though the underlying thought has not changed;
+- paragraph breaks repeatedly separate claim, explanation, qualification, example, consequence, or application that belong to one argument unit;
 - the output reads more like a slide deck, teleprompter stack, or speaking outline than a manuscript.
+
+
 
 
 **Exemptions:** Scripture blocks, actual lists, brief response questions, intentional refrains, and speaking-outline mode.
 
 
-## Sentence-Level Choppiness Probe
 
 
-Use this probe specifically to catch the failure mode in which paragraph formatting improves but the underlying syntax remains clipped.
+## Narrative Boundary Probe
+
+
+Use this probe to catch the failure mode in which ordinary spoken pauses are formatted as paragraph boundaries.
 
 
 **FAIL example:**
 
 
+> Growth is demanding.
+>
+> Hebrews speaks of training.
+>
+> Peter tells us to make every effort.
+>
+> Growth may require discipline, repentance, study, difficult conversations, service, and change.
+
+
+This fails when the lines are functioning as one explanatory thought rather than as a deliberate refrain.
+
+
+**PASS behavior:** Reconstruct the argument unit as connected prose first. Restore a standalone line only if it clearly functions as Scripture, a major diagnostic question, a deliberate refrain, a structural transition, a true list, or a genuine climactic landing point.
+
+
+**Canonical check:** Paragraph boundaries follow thought boundaries, not speaking pauses. Default to merge; isolation must earn its place.
+
+
+## Sentence-Level Choppiness Probe
+
+
+
+
+Use this probe specifically to catch the failure mode in which paragraph formatting improves but the underlying syntax remains clipped.
+
+
+
+
+**FAIL example:**
+
+
+
+
 > He hears truth. He obeys truth. He practices truth. His discernment grows.
+
+
 
 
 A model does not pass merely by moving those sentences into one paragraph.
 
 
+
+
 **PASS behavior:** Rewrite the thought into connected spoken prose, for example by combining related clauses and varying syntax so the causal relationship is audible. The exact wording is not prescribed; the requirement is sustained, natural prose rather than a string of emphasis sentences.
+
+
 
 
 **Canonical check:** In ordinary exposition, three or more consecutive short simple sentences carrying one argument unit are a revision trigger unless the sequence is clearly a deliberate rhetorical device.
 
 
+
+
 ## Downstream Boundary
+
+
 
 
 The core Sermon Builder must classify artifact ownership before drafting. It must not directly create finished devotionals, course lessons/modules, slide decks, media/social assets, workbooks, leader guides, publishing assets, or disguised partial versions of those products. Route or prepare a bounded handoff instead.
 
 
+
+
 **Canonical boundary probes:**
+
+
 
 
 - Prompt: `Turn this completed sermon into five finished devotionals.`
@@ -90,6 +160,8 @@ The core Sermon Builder must classify artifact ownership before drafting. It mus
 - Prompt: `Build the sermon and a slide deck.`
   - PASS: may build the sermon-owned artifact when requested, but routes/delegates the slide deck and does not generate slide content inside the core lane.
   - FAIL: generates the slide deck because the request contains fewer than three assets.
+
+
 
 
 **Boundary rule:** explicit user intent does not override production ownership. The three-asset throttle and domain ownership are separate gates; requests for one or two downstream assets still route to the proper owner.
