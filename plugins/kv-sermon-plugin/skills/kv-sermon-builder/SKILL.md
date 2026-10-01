@@ -1,7 +1,15 @@
----
+﻿---
 name: kv-sermon-builder
 description: Build, revise, tighten, restructure, or prepare faithful passage-governed sermons from an approved study handoff, sermon notes, outline, manuscript, or explicit sermon assignment. Use when the user asks for a sermon outline, hybrid manuscript, full sermon manuscript, speaking outline, sermon section, introduction, transition, conclusion, application development, sermon trim, sermon revision, or preacher-facing delivery notes. Keep KV Study Engine upstream for passage study/research and route formal audits, handoffs, listening guides, handouts, and print polish to their dedicated KV Skills. Never use this core to create finished devotionals, course lessons or modules, slides, media, social, publishing, workbook, or leader-guide assets; route those downstream.
 ---
+
+
+
+
+
+
+
+
 
 
 
@@ -19,7 +27,23 @@ description: Build, revise, tighten, restructure, or prepare faithful passage-go
 
 
 
+
+
+
+
+
+
+
+
 ## Mission
+
+
+
+
+
+
+
+
 
 
 
@@ -37,7 +61,23 @@ Build faithful, clear, preachable sermons from an approved biblical source base.
 
 
 
+
+
+
+
+
+
+
+
 Use the controlling question:
+
+
+
+
+
+
+
+
 
 
 
@@ -55,6 +95,14 @@ Use the controlling question:
 
 
 
+
+
+
+
+
+
+
+
 ## Authority Order
 
 
@@ -64,7 +112,23 @@ Use the controlling question:
 
 
 
+
+
+
+
+
+
+
+
 Use this order when sources or instructions conflict:
+
+
+
+
+
+
+
+
 
 
 
@@ -87,7 +151,23 @@ Use this order when sources or instructions conflict:
 
 
 
+
+
+
+
+
+
+
+
 Do not let a preferred framework, sermon device, illustration, or recurring ministry theme override the passage.
+
+
+
+
+
+
+
+
 
 
 
@@ -105,7 +185,23 @@ Do not let a preferred framework, sermon device, illustration, or recurring mini
 
 
 
+
+
+
+
+
+
+
+
 Own sermon construction and sermon-shaping work, including:
+
+
+
+
+
+
+
+
 
 
 
@@ -141,7 +237,23 @@ Own sermon construction and sermon-shaping work, including:
 
 
 
+
+
+
+
+
+
+
+
 Do not create extra outputs merely because they could be useful.
+
+
+
+
+
+
+
+
 
 
 
@@ -159,7 +271,23 @@ Do not create extra outputs merely because they could be useful.
 
 
 
+
+
+
+
+
+
+
+
 Run this gate **before drafting any requested deliverable**. Classification comes before helpfulness.
+
+
+
+
+
+
+
+
 
 
 
@@ -184,7 +312,23 @@ Run this gate **before drafting any requested deliverable**. Classification come
 
 
 
+
+
+
+
+
+
+
+
 This gate is a hard production boundary, not a preference.
+
+
+
+
+
+
+
+
 
 
 
@@ -202,6 +346,14 @@ This gate is a hard production boundary, not a preference.
 
 
 
+
+
+
+
+
+
+
+
 ### Route upstream to `kv-study-engine`
 
 
@@ -211,7 +363,23 @@ This gate is a hard production boundary, not a preference.
 
 
 
+
+
+
+
+
+
+
+
 Route when the primary task is:
+
+
+
+
+
+
+
+
 
 
 
@@ -234,7 +402,23 @@ Route when the primary task is:
 
 
 
+
+
+
+
+
+
+
+
 When meaning or source support is materially unsettled, do not invent authority in order to keep building the sermon.
+
+
+
+
+
+
+
+
 
 
 
@@ -252,7 +436,23 @@ When meaning or source support is materially unsettled, do not invent authority 
 
 
 
+
+
+
+
+
+
+
+
 Use the dedicated procedural owner rather than reproducing its full workflow:
+
+
+
+
+
+
+
+
 
 
 
@@ -278,7 +478,23 @@ Use the dedicated procedural owner rather than reproducing its full workflow:
 
 
 
+
+
+
+
+
+
+
+
 Do not embed those procedures in ordinary sermon-building responses.
+
+
+
+
+
+
+
+
 
 
 
@@ -296,6 +512,14 @@ Do not embed those procedures in ordinary sermon-building responses.
 
 
 
+
+
+
+
+
+
+
+
 Do not write finished downstream products inside this core Skill, even when explicitly requested as a follow-on to a sermon.
 
 
@@ -305,7 +529,23 @@ Do not write finished downstream products inside this core Skill, even when expl
 
 
 
+
+
+
+
+
+
+
+
 Route or prepare a bounded handoff for:
+
+
+
+
+
+
+
+
 
 
 
@@ -331,7 +571,23 @@ Route or prepare a bounded handoff for:
 
 
 
+
+
+
+
+
+
+
+
 Treat the approved sermon as the controlling source for downstream work. The bounded handoff may name the sermon title, controlling text, Main Idea, Goal, movements, cautions, and approved applications, but it must not contain the finished downstream artifact or a disguised draft of it.
+
+
+
+
+
+
+
+
 
 
 
@@ -349,6 +605,14 @@ Treat the approved sermon as the controlling source for downstream work. The bou
 
 
 
+
+
+
+
+
+
+
+
 ### Study-Handoff Consumer Mode
 
 
@@ -358,7 +622,23 @@ Treat the approved sermon as the controlling source for downstream work. The bou
 
 
 
+
+
+
+
+
+
+
+
 Use when an approved study handoff or study packet is supplied.
+
+
+
+
+
+
+
+
 
 
 
@@ -379,6 +659,14 @@ Use when an approved study handoff or study packet is supplied.
 
 
 
+
+
+
+
+
+
+
+
 ### Passage Plus Explicit Sermon Request Mode
 
 
@@ -388,7 +676,23 @@ Use when an approved study handoff or study packet is supplied.
 
 
 
+
+
+
+
+
+
+
+
 Use when the user gives a passage and explicitly asks for a sermon product.
+
+
+
+
+
+
+
+
 
 
 
@@ -407,6 +711,14 @@ Use when the user gives a passage and explicitly asks for a sermon product.
 
 
 
+
+
+
+
+
+
+
+
 ### Existing Sermon Mode
 
 
@@ -416,7 +728,23 @@ Use when the user gives a passage and explicitly asks for a sermon product.
 
 
 
+
+
+
+
+
+
+
+
 Use for outlines, manuscripts, notes, or prior sermon material.
+
+
+
+
+
+
+
+
 
 
 
@@ -435,6 +763,14 @@ Use for outlines, manuscripts, notes, or prior sermon material.
 
 
 
+
+
+
+
+
+
+
+
 ### Topical or Thematic Sermon Mode
 
 
@@ -444,7 +780,23 @@ Use for outlines, manuscripts, notes, or prior sermon material.
 
 
 
+
+
+
+
+
+
+
+
 Use when the user requests a topical, doctrinal, or thematic sermon.
+
+
+
+
+
+
+
+
 
 
 
@@ -465,7 +817,23 @@ Use when the user requests a topical, doctrinal, or thematic sermon.
 
 
 
+
+
+
+
+
+
+
+
 ### Section Mode
+
+
+
+
+
+
+
+
 
 
 
@@ -483,7 +851,23 @@ Use when the user requests only an introduction, movement, transition, applicati
 
 
 
+
+
+
+
+
+
+
+
 - Work only on that unit unless wider restructuring is necessary to make the requested section coherent.
+
+
+
+
+
+
+
+
 
 
 
@@ -501,6 +885,14 @@ Use when the user requests only an introduction, movement, transition, applicati
 
 
 
+
+
+
+
+
+
+
+
 For detailed composition rules, consult `references/sermon-composition-standard.md`.
 
 
@@ -510,7 +902,23 @@ For detailed composition rules, consult `references/sermon-composition-standard.
 
 
 
+
+
+
+
+
+
+
+
 Unless the user specifies otherwise:
+
+
+
+
+
+
+
+
 
 
 
@@ -539,7 +947,19 @@ Unless the user specifies otherwise:
 
 
 
+
+
+
+
+
+
+
+
 ### Narrative Boundary Rule
+
+
+
+
 
 
 
@@ -549,7 +969,15 @@ For full and hybrid manuscripts, **paragraph boundaries follow thought boundarie
 
 
 
+
+
+
+
 Do not create a new paragraph merely because a sentence is short, emphatic, parallel to the previous sentence, or likely to receive a vocal pause. Do not create a new paragraph merely because the next sentence begins with `And`, `But`, `So`, or `Because`.
+
+
+
+
 
 
 
@@ -559,12 +987,73 @@ Spoken pacing belongs primarily inside sentences and paragraphs. Paragraph break
 
 
 
+
+
+
+
 When a claim, explanation, qualification, example, consequence, and application belong to the same thought unit, keep them in connected prose even when individual sentences could sound effective in isolation.
 
 
 
 
+
+
+
+
 Use this governing presumption: **default to merge; isolate only when the line earns isolation** as Scripture, a major diagnostic question, a deliberate refrain, a structural transition, a true list, or a genuine climactic landing point.
+
+
+
+
+
+
+
+
+
+
+
+
+### Paragraph Rendering Contract — Full and Hybrid Manuscripts
+
+
+For full and hybrid manuscripts, narrative prose must also be **physically rendered as real paragraphs**. Conceptual continuity is not enough if each sentence is still separated by blank lines.
+
+
+- Keep related sentences inside the same Markdown paragraph.
+- Use blank lines only when the thought, rhetorical function, speaker movement, or application genuinely changes.
+- Do not use blank lines or paragraph breaks merely to create vocal pacing.
+- Ordinary exposition, theological explanation, application, transition, and conclusion material should normally appear in multi-sentence paragraphs.
+- Default body paragraphs should usually develop one coherent thought across roughly 3-6 sentences when the material naturally supports that length.
+- A one-sentence paragraph is an intentional rhetorical device, not the default manuscript format.
+- Headings, Scripture blocks, true lists, diagnostic questions, structural transitions, and genuine climactic landing lines may remain isolated when their function requires it.
+- If several consecutive paragraphs could be joined without changing meaning or rhetorical function, join them before delivery.
+
+
+When a memorable sequence contains several short statements, preserve at most the strongest landing line as isolated emphasis and absorb the surrounding explanation into connected prose unless the entire sequence is the single deliberate refrain for that major section.
+
+
+**Hard rendering rule:** a full or hybrid manuscript is not deliverable while ordinary body prose remains sentence-per-paragraph or blank-line paced.
+
+
+### Paragraph Formatting Acceptance Gate
+
+
+Before returning any full or hybrid manuscript, inspect the **rendered output**, section by section. The manuscript fails paragraph formatting when any of the following remains:
+
+
+1. Three or more consecutive ordinary body paragraphs contain only one sentence each.
+2. Three or more consecutive short declarations, imperatives, or fragments express one argument that could naturally be spoken as a connected paragraph.
+3. A claim, explanation, qualification, consequence, illustration, and application are split into separate paragraphs even though they form one thought unit.
+4. More than one stacked rhetorical sequence appears within the same major sermon section.
+5. Blank lines are functioning primarily as delivery pauses rather than actual paragraph boundaries.
+6. The body visually resembles preacher notes, a slide sequence, a teleprompter stack, or a sentence-per-line transcript.
+7. Most ordinary body paragraphs in a section contain fewer than three sentences without a clear rhetorical or structural reason.
+
+
+If any condition is true, reformat and, when needed, lightly rewrite the affected section before delivery. Do not merely remove line breaks if the underlying sentence cadence is still clipped.
+
+
+Use this conversion rule when emphasis and paragraph integrity compete: **keep the strongest line; merge the supporting lines.**
 
 
 
@@ -578,7 +1067,23 @@ Use this governing presumption: **default to merge; isolate only when the line e
 
 
 
+
+
+
+
+
+
+
+
 For every full or hybrid manuscript, use two distinct passes before delivery:
+
+
+
+
+
+
+
+
 
 
 
@@ -601,6 +1106,14 @@ For every full or hybrid manuscript, use two distinct passes before delivery:
 
 
 
+
+
+
+
+
+
+
+
 Consult `references/prose-normalization-workflow.md` for the required editorial procedure and examples. Do not deliver the full or hybrid manuscript until the second pass is complete.
 
 
@@ -610,7 +1123,23 @@ Consult `references/prose-normalization-workflow.md` for the required editorial 
 
 
 
+
+
+
+
+
+
+
+
 Use this front-matter and document order for a full sermon build unless the requested format requires less:
+
+
+
+
+
+
+
+
 
 
 
@@ -636,7 +1165,23 @@ Use this front-matter and document order for a full sermon build unless the requ
 
 
 
+
+
+
+
+
+
+
+
 Use this movement rhythm for each major movement:
+
+
+
+
+
+
+
+
 
 
 
@@ -657,7 +1202,23 @@ Use this movement rhythm for each major movement:
 
 
 
+
+
+
+
+
+
+
+
 Do not turn this rhythm into mechanical labels when natural sermon prose would be better, but ensure each function is present.
+
+
+
+
+
+
+
+
 
 
 
@@ -675,6 +1236,14 @@ Do not turn this rhythm into mechanical labels when natural sermon prose would b
 
 
 
+
+
+
+
+
+
+
+
 Consult `references/theological-rails.md` when the sermon involves broad theological synthesis, disputed interpretation, recurring Kingdom Vision themes, typology, spiritual powers, sacred-space themes, prophecy, or original-language claims.
 
 
@@ -684,7 +1253,23 @@ Consult `references/theological-rails.md` when the sermon involves broad theolog
 
 
 
+
+
+
+
+
+
+
+
 Always:
+
+
+
+
+
+
+
+
 
 
 
@@ -711,7 +1296,23 @@ Always:
 
 
 
+
+
+
+
+
+
+
+
 ## Voice and Preachability
+
+
+
+
+
+
+
+
 
 
 
@@ -729,7 +1330,23 @@ Consult `references/voice-and-output-guidance.md` when producing a manuscript, s
 
 
 
+
+
+
+
+
+
+
+
 Write for the ear, not only the page.
+
+
+
+
+
+
+
+
 
 
 
@@ -747,7 +1364,23 @@ Default manuscript hierarchy: **conversational narrative prose first; rhetorical
 
 
 
+
+
+
+
+
+
+
+
 For full and hybrid manuscripts:
+
+
+
+
+
+
+
+
 
 
 
@@ -776,7 +1409,23 @@ For full and hybrid manuscripts:
 
 
 
+
+
+
+
+
+
+
+
 Prefer:
+
+
+
+
+
+
+
+
 
 
 
@@ -800,7 +1449,23 @@ Prefer:
 
 
 
+
+
+
+
+
+
+
+
 Avoid:
+
+
+
+
+
+
+
+
 
 
 
@@ -824,7 +1489,23 @@ Avoid:
 
 
 
+
+
+
+
+
+
+
+
 When revising supplied sermon material, preserve the user's recognizable preaching voice.
+
+
+
+
+
+
+
+
 
 
 
@@ -842,6 +1523,14 @@ When revising supplied sermon material, preserve the user's recognizable preachi
 
 
 
+
+
+
+
+
+
+
+
 Default to CSB when quoting Scripture unless the user requests another translation or supplies another translation to preserve.
 
 
@@ -851,7 +1540,23 @@ Default to CSB when quoting Scripture unless the user requests another translati
 
 
 
+
+
+
+
+
+
+
+
 During sermon construction:
+
+
+
+
+
+
+
+
 
 
 
@@ -873,7 +1578,19 @@ During sermon construction:
 
 
 
+
+
+
+
+
+
+
+
 For formal Scripture-formatting, attribution, CSB notice, or link QA, route to `kv-scripture-formatting-check`.
+
+
+
+
 
 
 
@@ -881,7 +1598,17 @@ For formal Scripture-formatting, attribution, CSB notice, or link QA, route to `
 ## Finished Sermon Document Formatting
 
 
+
+
 When the user requests a polished finished sermon document, DOCX, print-ready sermon manuscript, formatted sermon export, or equivalent final document treatment, consult `references/sermon-document-formatting-standard.md` before file generation. Preserve the semantic highlight hierarchy from `references/sermon-composition-standard.md`. The muted color palette and custom-shading implementation locked in the formatting reference are mandatory defaults: do not substitute Microsoft Word's bright built-in highlight palette for the specified custom RGB/hex fills. Do not invent font sizes, font families, spacing, margins, page-number rules, or other implementation values that the formatting standard has not yet locked. The document-generation workflow owns technical implementation and render verification; this Skill owns the sermon-specific semantic formatting requirements.
+
+
+
+
+
+
+
+
 
 
 
@@ -899,7 +1626,23 @@ When the user requests a polished finished sermon document, DOCX, print-ready se
 
 
 
+
+
+
+
+
+
+
+
 Match the output to the user's request.
+
+
+
+
+
+
+
+
 
 
 
@@ -923,7 +1666,23 @@ Match the output to the user's request.
 
 
 
+
+
+
+
+
+
+
+
 For a bare passage with no explicit sermon-product request, provide a concise sermon-prep orientation rather than automatically producing a full sermon.
+
+
+
+
+
+
+
+
 
 
 
@@ -941,7 +1700,23 @@ For a bare passage with no explicit sermon-product request, provide a concise se
 
 
 
+
+
+
+
+
+
+
+
 Do not invent:
+
+
+
+
+
+
+
+
 
 
 
@@ -965,7 +1740,23 @@ Do not invent:
 
 
 
+
+
+
+
+
+
+
+
 If the sermon depends on user notes, Study Engine material, uploaded sources, or external research, preserve the source distinctions that materially affect the sermon.
+
+
+
+
+
+
+
+
 
 
 
@@ -983,7 +1774,23 @@ If a formal source audit is requested, use `kv-source-transparency-check`.
 
 
 
+
+
+
+
+
+
+
+
 ## Legacy Boundary
+
+
+
+
+
+
+
+
 
 
 
@@ -1001,7 +1808,23 @@ Do not reactivate Agent 003, Agent 007, Agent 010, Student Packet Builder, Inter
 
 
 
+
+
+
+
+
+
+
+
 Do not promote project-specific sermons, sermon series, church-specific examples, or ministry project content into global Skill behavior unless explicitly approved as a reusable standard.
+
+
+
+
+
+
+
+
 
 
 
@@ -1019,7 +1842,23 @@ Do not promote project-specific sermons, sermon series, church-specific examples
 
 
 
+
+
+
+
+
+
+
+
 Before returning a sermon product, verify:
+
+
+
+
+
+
+
+
 
 
 
@@ -1037,6 +1876,7 @@ Before returning a sermon product, verify:
 - unsupported claims are removed, softened, or flagged;
 - the requested sermon format is the only primary output produced;
 - full and hybrid manuscript prose has completed the required second-pass normalization and reads primarily as connected narrative prose rather than line-stacked outline cadence;
+- **Paragraph rendering has passed:** full/hybrid manuscript body is physically rendered as connected multi-sentence paragraphs; blank lines mark genuine paragraph transitions rather than sentence pacing; repeated one-sentence paragraphs have been merged; rhetorical isolation remains exceptional;
 - sentence-level cadence has also been normalized so ordinary exposition is not dominated by clipped simple sentences, repeated subject-verb openings, or fragment chains merely hidden inside longer paragraphs;
 - no supporting Skill procedure has been duplicated unnecessarily;
 - the Artifact Ownership Gate was applied before drafting;
@@ -1050,7 +1890,23 @@ Before returning a sermon product, verify:
 
 
 
+
+
+
+
+
+
+
+
 For regression validation of prose rhythm and output-mode boundaries, consult `references/regression-checks.md`.
+
+
+
+
+
+
+
+
 
 
 
