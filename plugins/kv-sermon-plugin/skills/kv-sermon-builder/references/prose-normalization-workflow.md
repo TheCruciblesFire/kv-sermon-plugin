@@ -3,7 +3,15 @@
 
 
 
+
+
+
+
 Use this reference after a full or hybrid sermon draft is complete. This is an editorial second pass, not a new sermon-build pass. Preserve the sermon's theology, Main Idea, Goal, movement order, textual cautions, and applications unless a wording change is required for clarity.
+
+
+
+
 
 
 
@@ -11,19 +19,95 @@ Use this reference after a full or hybrid sermon draft is complete. This is an e
 ## Narrative Boundary Rule
 
 
+
+
 In full and hybrid manuscripts, paragraph boundaries represent changes in thought, not pauses in delivery. Shortness, emphasis, parallel wording, or a natural speaking pause do not by themselves justify a paragraph break.
+
+
 
 
 Spoken pacing belongs primarily inside sentences and paragraphs. Paragraph breaks belong primarily to argument structure. When a claim, explanation, qualification, example, consequence, and application belong to one thought unit, keep them together as connected prose.
 
 
+
+
 Use this governing presumption: **default to merge; isolate only when the line earns isolation** as Scripture, a major diagnostic question, a deliberate refrain, a structural transition, a true list, or a genuine climactic landing point.
+
+
 
 
 During normalization, mentally strip away rhetorical line breaks first, rebuild the section around its argument units, and only then restore selected standalone lines for emphasis. If deleting blank lines would turn a section into coherent paragraphs without changing the actual argument, the manuscript probably has not completed normalization.
 
 
+
+
+
+
+
+
+## Paragraph Rendering Contract
+
+
+Narrative quality and paragraph rendering are separate checks. A section can sound connected in concept and still fail if each sentence is physically separated by blank lines.
+
+
+For full and hybrid manuscripts:
+
+
+- keep related sentences inside the same paragraph;
+- use blank lines only for genuine turns in thought, rhetorical function, application, or structure;
+- do not use paragraph breaks merely to signal a speaking pause;
+- let ordinary exposition, theology, application, transitions, and conclusions develop in multi-sentence paragraphs;
+- treat one-sentence paragraphs as intentional emphasis rather than normal formatting;
+- when a short memorable sequence carries one thought, keep the strongest landing line isolated at most and merge the supporting statements into connected prose.
+
+
+### Rendering FAIL
+
+
+> Jesus is not merely giving His disciples principles.
+>
+> He is calling them to allegiance.
+>
+> The kingdom cannot be separated from the King.
+>
+> That means faithfulness is ultimately personal.
+
+
+### Rendering PASS
+
+
+> Jesus is not merely giving His disciples principles; He is calling them to allegiance. The kingdom cannot be separated from the King, which means faithfulness is ultimately personal. His disciples are not simply embracing a set of values. They are following Jesus Himself.
+
+
+When both versions communicate the same argument, default to the PASS pattern in full and hybrid manuscripts.
+
+
+### Paragraph Formatting Acceptance Gate
+
+
+Before delivery, inspect each introduction, major movement, application block, transition, and conclusion in its final rendered form. A section fails when:
+
+
+1. three or more consecutive ordinary body paragraphs contain only one sentence each;
+2. several short declarations or imperatives that form one thought are separated by blank lines;
+3. claim, explanation, qualification, consequence, illustration, or application are split apart despite belonging to one argument unit;
+4. more than one stacked rhetorical sequence remains inside the same major section;
+5. blank lines mainly create vocal pacing;
+6. the section visually resembles notes, slides, a teleprompter stack, or sentence-per-line transcription;
+7. most ordinary body paragraphs contain fewer than three sentences without a real rhetorical or structural reason.
+
+
+If a section fails, rewrite its paragraph structure before delivery. Use the governing repair rule: **keep the strongest line; merge the supporting lines.** Do not count a section as repaired merely because blank lines were removed if the prose still consists of clipped sentence chains.
+
+
+
+
 ## Pass 1 — Complete the Sermon
+
+
+
+
 
 
 
@@ -33,7 +117,15 @@ Draft the sermon faithfully from the controlling passage or approved handoff. Do
 
 
 
+
+
+
+
 ## Pass 2 — Normalize Section by Section
+
+
+
+
 
 
 
@@ -43,7 +135,15 @@ Work through the introduction, each movement, each application section, every tr
 
 
 
+
+
+
+
 For each section:
+
+
+
+
 
 
 
@@ -68,7 +168,15 @@ For each section:
 
 
 
+
+
+
+
 ## Normalize Syntax, Not Just Paragraph Breaks
+
+
+
+
 
 
 
@@ -78,7 +186,15 @@ A manuscript can be paragraph-dominant and still sound choppy. Do not treat seve
 
 
 
+
+
+
+
 ### Unwanted sentence-level choppiness
+
+
+
+
 
 
 
@@ -88,7 +204,15 @@ A manuscript can be paragraph-dominant and still sound choppy. Do not treat seve
 
 
 
+
+
+
+
 ### Normalize
+
+
+
+
 
 
 
@@ -98,7 +222,15 @@ A manuscript can be paragraph-dominant and still sound choppy. Do not treat seve
 
 
 
+
+
+
+
 ### Unwanted clipped exposition
+
+
+
+
 
 
 
@@ -108,7 +240,15 @@ A manuscript can be paragraph-dominant and still sound choppy. Do not treat seve
 
 
 
+
+
+
+
 ### Normalize
+
+
+
+
 
 
 
@@ -118,7 +258,15 @@ A manuscript can be paragraph-dominant and still sound choppy. Do not treat seve
 
 
 
+
+
+
+
 Use short simple sentences intentionally, not habitually. In ordinary exposition, vary sentence openings and sentence length, and let related clauses carry one another so the sermon sounds like connected speech rather than notes converted into paragraphs.
+
+
+
+
 
 
 
@@ -128,12 +276,24 @@ Use short simple sentences intentionally, not habitually. In ordinary exposition
 
 
 
+
+
+
+
 Combine sentences that belong to one thought unit. Do not create bloated paragraphs by joining unrelated ideas. A paragraph should normally develop one claim, explanation, application, or transition.
 
 
 
 
+
+
+
+
 ### Unwanted
+
+
+
+
 
 
 
@@ -147,7 +307,15 @@ Combine sentences that belong to one thought unit. Do not create bloated paragra
 
 
 
+
+
+
+
 ### Normalize
+
+
+
+
 
 
 
@@ -157,7 +325,15 @@ Combine sentences that belong to one thought unit. Do not create bloated paragra
 
 
 
+
+
+
+
 ### Unwanted
+
+
+
+
 
 
 
@@ -175,7 +351,15 @@ Combine sentences that belong to one thought unit. Do not create bloated paragra
 
 
 
+
+
+
+
 ### Normalize
+
+
+
+
 
 
 
@@ -185,7 +369,15 @@ Combine sentences that belong to one thought unit. Do not create bloated paragra
 
 
 
+
+
+
+
 ### Keep Standalone When It Truly Functions as Emphasis
+
+
+
+
 
 
 
@@ -203,7 +395,23 @@ A brief line such as **Christ is enough.** or **Do not turn away.** may remain i
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 ### Unwanted argument-unit fragmentation
+
+
+
+
 
 
 
@@ -221,7 +429,15 @@ A brief line such as **Christ is enough.** or **Do not turn away.** may remain i
 
 
 
+
+
+
+
 These sentences are not parallel, but they belong to one argument unit: identity, textual landing point, command, explanation, and summary. Normalize them into developed prose rather than preserving five paragraph breaks.
+
+
+
+
 
 
 
@@ -231,12 +447,24 @@ These sentences are not parallel, but they belong to one argument unit: identity
 
 
 
+
+
+
+
 > We belong to God, and therefore our lives matter to him. That is why verse 19 becomes the chapter's natural landing point: those who suffer according to God's will are to entrust themselves to a faithful Creator while doing what is good. Peter holds both parts together. We entrust ourselves to God, and because we trust him, we continue doing good.
 
 
 
 
+
+
+
+
 ### Unwanted repeated declaratives
+
+
+
+
 
 
 
@@ -254,7 +482,15 @@ These sentences are not parallel, but they belong to one argument unit: identity
 
 
 
+
+
+
+
 ### Normalize
+
+
+
+
 
 
 
@@ -264,7 +500,15 @@ These sentences are not parallel, but they belong to one argument unit: identity
 
 
 
+
+
+
+
 A stacked sequence like the first example may be retained only when it is the one deliberate climactic refrain for that section. Otherwise normalize it into prose.
+
+
+
+
 
 
 
@@ -274,7 +518,15 @@ A stacked sequence like the first example may be retained only when it is the on
 
 
 
+
+
+
+
 Before delivery, ask one qualitative question for every major section:
+
+
+
+
 
 
 
@@ -284,7 +536,15 @@ Before delivery, ask one qualitative question for every major section:
 
 
 
+
+
+
+
 If the answer is the latter, rewrite the section before delivery.
+
+
+
+
 
 
 

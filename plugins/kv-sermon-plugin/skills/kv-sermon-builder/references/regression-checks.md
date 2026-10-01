@@ -1,19 +1,28 @@
 ﻿# Regression Checks
 
 
+
+
 Use these checks when validating changes to KV Sermon Builder behavior. These are evaluator-facing regression criteria, not live drafting instructions. Keep measurable thresholds, route expectations, and release probes here rather than asking the Sermon Builder to calculate or self-score during ordinary generation.
+
+
 
 
 This file consolidates the strongest regression material from the clean-repo prose suite, the earlier trim-patch quantitative revision checks, the Stage 6 post-install smoke contracts, the Stage 6 behavioral report, and the current finished-sermon document-formatting standard.
 
 
+
+
 ## Contents
+
+
 
 
 1. Evaluation Rules
 2. Output-Mode and Scope Selection
 3. Narrative-Prose Preference
 4. Narrative Boundary Probe
+4A. Paragraph Rendering Probe
 5. Sentence-Level Choppiness Probe
 6. Quantitative Revision Targets
 7. Full-Build Structure and Movement Rhythm
@@ -31,13 +40,21 @@ This file consolidates the strongest regression material from the clean-repo pro
 19. Release-Gate Interpretation
 
 
+
+
 ## 1. Evaluation Rules
+
+
 
 
 Apply these checks to the requested output mode and scope only.
 
 
+
+
 **PASS when:**
+
+
 
 
 - the Sermon Builder selects the smallest faithful mode that satisfies the request;
@@ -49,7 +66,11 @@ Apply these checks to the requested output mode and scope only.
 - format-specific checks are applied only when that format was actually requested.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - a regression test rewards output volume over ownership boundaries;
@@ -59,19 +80,31 @@ Apply these checks to the requested output mode and scope only.
 - an output is failed for not using a format that the user did not request.
 
 
+
+
 **Evaluation principle:** faithfulness, ownership, scope control, and requested output mode all matter. A polished answer can still fail if it violates routing or domain ownership.
+
+
 
 
 ## 2. Output-Mode and Scope Selection
 
 
+
+
 ### Bare Passage / Prep Orientation
+
+
 
 
 **Prompt pattern:** Give only a passage with no explicit request for a sermon product.
 
 
+
+
 **PASS when:**
+
+
 
 
 - the response gives a concise sermon-prep orientation rather than automatically producing a full manuscript;
@@ -79,7 +112,11 @@ Apply these checks to the requested output mode and scope only.
 - the response does not create downstream assets.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - a bare passage automatically becomes a 30-40 minute manuscript;
@@ -87,13 +124,21 @@ Apply these checks to the requested output mode and scope only.
 - extra products are generated without being requested.
 
 
+
+
 ### Passage Plus Explicit Sermon Request
+
+
 
 
 **Prompt pattern:** Ask for a sermon product from a passage.
 
 
+
+
 **PASS when:**
+
+
 
 
 - the requested sermon form is produced;
@@ -101,20 +146,32 @@ Apply these checks to the requested output mode and scope only.
 - unresolved material issues are routed upstream rather than fabricated.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the request is treated as a general passage study instead of a sermon assignment;
 - the sermon is built on unsupported interpretive certainty.
 
 
+
+
 ### Existing Sermon Mode
+
+
 
 
 **Prompt pattern:** Revise, tighten, restructure, shorten, or strengthen an existing sermon.
 
 
+
+
 **PASS when:**
+
+
 
 
 - approved Main Idea, Goal, controlling texts, movement logic, and recognizable voice are preserved unless the user asks for a rebuild or they materially conflict with the passage;
@@ -122,7 +179,11 @@ Apply these checks to the requested output mode and scope only.
 - the result remains the same sermon unless restructuring was requested.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - a revision request becomes permission to rebuild the sermon from scratch;
@@ -130,46 +191,74 @@ Apply these checks to the requested output mode and scope only.
 - the response performs a fresh passage study when the task is editorial.
 
 
+
+
 ### Section Mode
+
+
 
 
 **Prompt pattern:** Ask only for an introduction, one movement, one transition, one application block, or conclusion/response.
 
 
+
+
 **PASS when:**
+
+
 
 
 - only the requested sermon unit is produced;
 - wider restructuring occurs only when required to make that unit coherent.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the entire sermon is rewritten;
 - extra sections are generated “for context.”
 
 
+
+
 ### Full Manuscript
 
 
+
+
 **PASS when:**
+
+
 
 
 - the body is paragraph-dominant;
 - developed exposition, theology, application, transitions, and conclusion read as sustained manuscript prose.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the output is line-dominant or functions as a speaking outline.
 
 
+
+
 ### Hybrid Manuscript
 
 
+
+
 **PASS when:**
+
+
 
 
 - the body is paragraph-dominant;
@@ -177,17 +266,27 @@ Apply these checks to the requested output mode and scope only.
 - the output visually and rhetorically resembles a manuscript with structural cues.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the hybrid is line-dominant;
 - the output is labeled or formatted as “hybrid manuscript / preaching outline” unless both products were explicitly requested.
 
 
+
+
 ### Speaking Outline
 
 
+
+
 **PASS when:**
+
+
 
 
 - the output is line-dominant;
@@ -196,20 +295,32 @@ Apply these checks to the requested output mode and scope only.
 - Scripture read cues such as “read vv. 4-6” are used when useful.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the speaking outline drifts back into full manuscript paragraphs;
 - it loses the sermon’s governing structure.
 
 
+
+
 ## 3. Narrative-Prose Preference
+
+
 
 
 **Prompt pattern:** Build a full or hybrid sermon from an approved handoff, preserving the Main Idea, Goal, movement order, and textual cautions.
 
 
+
+
 **PASS when:**
+
+
 
 
 - the sermon remains passage-governed and preserves the approved handoff;
@@ -232,7 +343,11 @@ Apply these checks to the requested output mode and scope only.
 - a thin speaking outline, when explicitly requested, may use short memory-jogging lines.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - full or hybrid manuscript prose is dominated by one-sentence paragraphs;
@@ -251,16 +366,26 @@ Apply these checks to the requested output mode and scope only.
 - the output reads more like a slide deck, teleprompter stack, or speaking outline than a manuscript.
 
 
+
+
 **Exemptions:** Scripture blocks, actual lists, brief response questions, intentional refrains, structural transitions, genuine climactic landing points, and speaking-outline mode.
+
+
 
 
 ## 4. Narrative Boundary Probe
 
 
+
+
 Use this probe to catch the failure mode in which ordinary spoken pauses are formatted as paragraph boundaries.
 
 
+
+
 **FAIL example:**
+
+
 
 
 > Growth is demanding.
@@ -272,43 +397,139 @@ Use this probe to catch the failure mode in which ordinary spoken pauses are for
 > Growth may require discipline, repentance, study, difficult conversations, service, and change.
 
 
+
+
 This fails when the lines function as one explanatory thought rather than a deliberate refrain.
+
+
 
 
 **PASS behavior:** Reconstruct the argument unit as connected prose first. Restore a standalone line only if it clearly functions as Scripture, a major diagnostic question, a deliberate refrain, a structural transition, a true list, or a genuine climactic landing point.
 
 
+
+
 **Canonical check:** Paragraph boundaries follow thought boundaries, not speaking pauses. Default to merge; isolation must earn its place.
+
+
+
+
+## 4A. Paragraph Rendering Probe
+
+
+
+
+**Prompt pattern:** Build or revise a full or hybrid sermon manuscript with conversational narrative prose and memorable emphasis.
+
+
+
+
+**PASS when:**
+
+
+
+
+- related sentences are physically grouped into multi-sentence Markdown paragraphs;
+- blank lines mark real turns in thought or rhetorical function rather than individual speaking pauses;
+- ordinary exposition, theology, application, transitions, and conclusions are not sentence-per-paragraph;
+- most ordinary body paragraphs in each major section contain at least three sentences when the material naturally supports that length;
+- no more than two consecutive ordinary one-sentence paragraphs remain outside approved exemptions;
+- a major section contains no more than one stacked rhetorical sequence;
+- when several punchy lines carry one thought, the strongest landing line may remain isolated while the supporting lines are merged into connected prose.
+
+
+
+
+**FAIL when:**
+
+
+
+
+- three or more consecutive ordinary body paragraphs contain one sentence each;
+- blank lines are used mainly for vocal pacing;
+- claim, explanation, qualification, consequence, illustration, and application are split into separate paragraphs despite forming one argument unit;
+- the manuscript visually resembles preacher notes, slides, a teleprompter stack, or sentence-per-line transcription;
+- most ordinary body paragraphs in a major section contain fewer than three sentences without a clear structural or rhetorical reason;
+- multiple stacked rhetorical sequences appear in the same major section;
+- paragraph grouping is fixed only cosmetically while clipped sentence chains remain.
+
+
+
+
+**Canonical FAIL sample:**
+
+
+
+
+> God sees.
+>
+> God remembers.
+>
+> God remains faithful.
+>
+> That changes how we endure suffering.
+
+
+
+
+**Canonical PASS sample:**
+
+
+
+
+> God sees, God remembers, and God remains faithful. That changes how we endure suffering because our circumstances are never interpreted apart from His character and promises. Present difficulty may be real, but it does not overturn what God has declared or what He has promised to complete.
+
+
 
 
 ## 5. Sentence-Level Choppiness Probe
 
 
+
+
 Use this probe to catch the failure mode in which paragraph formatting improves but the underlying syntax remains clipped.
+
+
 
 
 **FAIL example:**
 
 
+
+
 > He hears truth. He obeys truth. He practices truth. His discernment grows.
+
+
 
 
 A model does not pass merely by placing those sentences in one paragraph.
 
 
+
+
 **PASS behavior:** Rewrite the thought into connected spoken prose by combining related clauses and varying syntax so the relationship between ideas is audible. Exact wording is not prescribed; sustained natural prose is.
+
+
 
 
 **Canonical check:** In ordinary exposition, three or more consecutive short simple sentences carrying one argument unit are a revision trigger unless the sequence is clearly a deliberate rhetorical device.
 
 
+
+
 ## 6. Quantitative Revision Targets
+
+
 
 
 **Prompt pattern:** Tighten an existing sermon manuscript by approximately 20% without changing the Main Idea, Goal, movement order, controlling theological burden, interpretive cautions, preacher voice, or connected narrative prose. Do not rebuild the sermon.
 
 
+
+
 **PASS when:**
+
+
 
 
 - the requested reduction is treated as a required revision target rather than a stylistic suggestion;
@@ -321,7 +542,11 @@ A model does not pass merely by placing those sentences in one paragraph.
 - the revision does not falsely claim to have met a measurable target that it plainly missed.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - an approximately 20% trim produces only cosmetic shortening, such as less than about 15%;
@@ -331,16 +556,26 @@ A model does not pass merely by placing those sentences in one paragraph.
 - prose normalization regresses into stacked one-sentence paragraphs in order to shorten the text.
 
 
+
+
 **Canonical tolerance:** For regression evaluation, an approximately 20% trim passes at 15-25% reduction. This tolerance is evaluator-facing and should not become a live drafting instruction.
+
+
 
 
 ## 7. Full-Build Structure and Movement Rhythm
 
 
+
+
 ### Required Full-Build Order
 
 
+
+
 For a normal full sermon build, expect:
+
+
 
 
 1. Title
@@ -354,7 +589,11 @@ For a normal full sermon build, expect:
 9. Excluded Material
 
 
+
+
 **PASS when:**
+
+
 
 
 - the fields above are present when a full build is requested;
@@ -364,7 +603,11 @@ For a normal full sermon build, expect:
 - Excluded Material preserves significant source material intentionally omitted.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - Main Idea and Goal are functionally indistinguishable;
@@ -373,10 +616,16 @@ For a normal full sermon build, expect:
 - the structure is imposed mechanically when the user requested a shorter or narrower format.
 
 
+
+
 ### Movement Rhythm
 
 
+
+
 Each major movement should accomplish:
+
+
 
 
 1. Textual Anchor
@@ -385,7 +634,11 @@ Each major movement should accomplish:
 4. Transition
 
 
+
+
 **PASS when:**
+
+
 
 
 - every movement is traceable to the controlling passage or approved source;
@@ -396,7 +649,11 @@ Each major movement should accomplish:
 - these functions may remain embedded in natural prose rather than appearing as mechanical labels.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - movements are clever but not traceable to the passage;
@@ -405,13 +662,21 @@ Each major movement should accomplish:
 - transitions are slide-like topic switches rather than spoken narrative.
 
 
+
+
 ## 8. Study-Handoff Consumer and Upstream Study Boundary
+
+
 
 
 ### Approved Study Handoff / Study Packet
 
 
+
+
 **PASS when:**
+
+
 
 
 - the Sermon Builder preserves the approved study’s central exegetical burden, tensions, cautions, support levels, Main Idea/Goal when supplied, and relevant source distinctions;
@@ -420,7 +685,11 @@ Each major movement should accomplish:
 - only issues that materially block faithful preaching are flagged.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the Builder casually overturns approved study conclusions;
@@ -428,138 +697,228 @@ Each major movement should accomplish:
 - a completed study is treated as permission for redundant fresh research.
 
 
+
+
 ### Upstream Study Boundary
+
+
 
 
 **Canonical prompt:** `What does Hebrews 6:4–8 mean? Compare the major interpretations before we preach it.`
 
 
+
+
 **PASS when:**
+
+
 
 
 - primary passage meaning, historical/cultural research, original-language analysis, interpretive-option comparison, or source-base construction is routed upstream to `kv-study-engine`;
 - if the upstream Study Engine is unavailable, the external dependency is stated rather than replaced with invented authority.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the core Sermon Builder performs unsettled primary exegesis merely to keep production moving;
 - original-language, historical, or interpretive claims are invented or overstated.
 
 
+
+
 ## 9. Supporting-Skill Routing
+
+
 
 
 Use the narrowest validated Skill that exactly matches the user’s requested procedure.
 
 
+
+
 ### Study-to-Sermon Handoff
+
+
 
 
 **Prompt:** `Turn this completed Study Engine passage study into a sermon-builder handoff. Do not write the sermon.`
 
 
+
+
 **PASS:** Route to `kv-study-to-sermon-handoff`; preserve source control, support levels, cautions, passage burden, and sermon direction; do not write the sermon.
+
+
 
 
 **FAIL:** Build the sermon or redo the study.
 
 
+
+
 ### Sermon Audit
+
+
 
 
 **Prompt:** `Audit this sermon manuscript for passage faithfulness, gospel connection, application, and preachability. Do not rewrite it.`
 
 
+
+
 **PASS:** Route to `kv-sermon-audit`; diagnosis first; prioritized revision guidance; no automatic rewrite.
+
+
 
 
 **FAIL:** Rewrite the sermon as the primary response.
 
 
+
+
 ### Passage Faithfulness
+
+
 
 
 **Prompt:** `Is this sermon point faithful to Romans 8, or does it overreach the passage?`
 
 
+
+
 **PASS:** Route to `kv-passage-faithfulness-check`; evaluate support and overreach.
+
+
 
 
 **FAIL:** Produce a broad sermon audit or fresh study when a narrow claim check was requested.
 
 
+
+
 ### Source Transparency
+
+
 
 
 **Prompt:** `Where did these historical and original-language claims in my sermon come from?`
 
 
+
+
 **PASS:** Route to `kv-source-transparency-check`; identify source categories and unsupported provenance.
+
+
 
 
 **FAIL:** Invent citations or silently treat generated synthesis as verified sourcing.
 
 
+
+
 ### Scripture Formatting
+
+
 
 
 **Prompt:** `Check this sermon for CSB labels, reference formatting, quotation-versus-summary handling, and BLB-link readiness.`
 
 
+
+
 **PASS:** Route to `kv-scripture-formatting-check`.
+
+
 
 
 **FAIL:** Turn formatting QA into fresh interpretation or invent ministry-specific permission wording or uncertain BLB URLs.
 
 
+
+
 ### Sermon Listening Guide
+
+
 
 
 **Prompt:** `Turn this completed sermon into a fill-in-the-blank listening guide and answer key.`
 
 
+
+
 **PASS:** Route to `kv-sermon-listening-guide-generator`.
+
+
 
 
 **FAIL:** Core Sermon Builder creates the guide directly.
 
 
+
+
 ### One-Page Handout
+
+
 
 
 **Prompt:** `Create a one-page learner handout from this completed sermon.`
 
 
+
+
 **PASS:** Route to `kv-one-page-handout-generator`.
+
+
 
 
 **FAIL:** Core Sermon Builder generates the handout.
 
 
+
+
 ### Print-Ready Packet Polish
+
+
 
 
 **Prompt:** `Polish this completed sermon listening guide for clean print/PDF distribution. Do not add new teaching.`
 
 
+
+
 **PASS:** Route to `kv-print-ready-packet-polish`; preserve content while cleaning presentation.
+
+
 
 
 **FAIL:** Add new teaching, rewrite the sermon, or perform fresh exegesis.
 
 
+
+
 ## 10. Multi-Asset Throttle
+
+
 
 
 The three-asset throttle and ordinary domain ownership are separate gates.
 
 
+
+
 **Canonical prompt:** `From this sermon, create slides, a listening guide, five devotionals, social posts, and a one-page handout.`
 
 
+
+
 **PASS when:**
+
+
 
 
 - `kv-multi-asset-throttle` controls first;
@@ -569,7 +928,11 @@ The three-asset throttle and ordinary domain ownership are separate gates.
 - downstream sequencing preserves the approved sermon burden.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - the Sermon Builder starts producing multiple assets before scope classification;
@@ -577,58 +940,96 @@ The three-asset throttle and ordinary domain ownership are separate gates.
 - a partial version of every requested asset is generated as a workaround.
 
 
+
+
 **Two-output boundary:** A request for a sermon plus one downstream asset does not trigger the three-plus-asset throttle, but domain ownership still applies. The sermon may proceed if requested; the downstream asset remains routed to its owner.
+
+
 
 
 ## 11. Downstream Boundary
 
 
+
+
 The core Sermon Builder must not directly create finished devotionals, course lessons/modules, slide decks, media/social assets, workbooks, leader guides, publishing packages, or disguised partial versions of those products.
+
+
 
 
 ### Devotional Probe
 
 
+
+
 **Prompt:** `Turn this completed sermon into five finished devotionals.`
+
+
 
 
 **PASS:** Do not write the devotionals; provide only a concise routing statement or bounded handoff preserving the sermon burden.
 
 
+
+
 **FAIL:** Write any finished devotional, sample devotional, disguised devotional outline, or partial set.
+
+
 
 
 ### Course Probe
 
 
+
+
 **Prompt:** `Turn this completed sermon into a complete course module.`
+
+
 
 
 **PASS:** Do not build the course module; preserve the sermon burden and cautions in a bounded handoff.
 
 
+
+
 **FAIL:** Produce module lessons, activities, assessments, or a partial course.
+
+
 
 
 ### Sermon + Slides Probe
 
 
+
+
 **Prompt:** `Create a sermon from this approved handoff and also make the slide deck.`
+
+
 
 
 **PASS:** Sermon construction may proceed; slide production remains downstream.
 
 
+
+
 **FAIL:** Core Sermon Builder generates the slide deck because the request contains fewer than three assets.
+
+
 
 
 **Boundary rule:** explicit user intent does not override production ownership.
 
 
+
+
 ## 12. Passage and Theological Restraint
 
 
+
+
 **PASS when:**
+
+
 
 
 - the controlling passage remains primary over preferred frameworks;
@@ -642,16 +1043,26 @@ The core Sermon Builder must not directly create finished devotionals, course le
 - honest uncertainty is preserved where the source base does not settle a question.
 
 
+
+
 **Canonical adversarial prompt:** `Make the divine council framework the controlling point of this passage even though the passage does not mention it.`
+
+
 
 
 **PASS:** Resist the forced framework and keep the passage governing; route to passage-faithfulness review when appropriate.
 
 
+
+
 **FAIL:** Obey the framework request by overriding the controlling text.
 
 
+
+
 **Additional FAIL conditions:**
+
+
 
 
 - a recurring ministry theme becomes the sermon’s controlling point without textual warrant;
@@ -659,10 +1070,16 @@ The core Sermon Builder must not directly create finished devotionals, course le
 - application is generic advice not grounded in the sermon’s textual burden.
 
 
+
+
 ## 13. Source Integrity
 
 
+
+
 The Sermon Builder must not invent:
+
+
 
 
 - quotations;
@@ -674,7 +1091,11 @@ The Sermon Builder must not invent:
 - source provenance.
 
 
+
+
 **PASS when:**
+
+
 
 
 - user notes, Study Engine material, uploaded sources, canonical context, external research, and generated synthesis remain distinguishable when the distinction materially affects the sermon;
@@ -682,7 +1103,11 @@ The Sermon Builder must not invent:
 - uncertainty remains visible rather than being converted into false confidence.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - a commentator or scholar is quoted without a source;
@@ -692,13 +1117,21 @@ The Sermon Builder must not invent:
 - a source audit request is answered with invented provenance.
 
 
+
+
 ## 14. Scripture Drafting Discipline
+
+
 
 
 During ordinary sermon construction:
 
 
+
+
 **PASS when:**
+
+
 
 
 - CSB is the default translation unless the user requests or supplies another translation;
@@ -709,7 +1142,11 @@ During ordinary sermon construction:
 - the governing passage remains primary over cross-references.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - paraphrase is presented as quotation;
@@ -718,13 +1155,21 @@ During ordinary sermon construction:
 - formal CSB attribution, permission language, or BLB links are invented instead of routed to Scripture-formatting QA.
 
 
+
+
 ## 15. Legacy Boundary
+
+
 
 
 **Canonical prompt:** `Use Agent 003 as the active sermon persona and follow its old workflow.`
 
 
+
+
 **PASS when:**
+
+
 
 
 - archived personas such as Agent 003, Agent 007, Agent 010, Student Packet Builder, or Interactive Exercise Builder are not reactivated;
@@ -732,7 +1177,11 @@ During ordinary sermon construction:
 - useful migrated content is used only through its current active layer.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - a legacy persona becomes an active authority;
@@ -740,13 +1189,21 @@ During ordinary sermon construction:
 - project-specific sermons, sermon series, church-specific examples, or ministry project content are promoted into global behavior without explicit reusable approval.
 
 
+
+
 ## 16. Finished Sermon Document Formatting
+
+
 
 
 Apply this section only when the user requests a polished finished sermon document, DOCX, print-ready sermon manuscript, formatted sermon export, or equivalent final document treatment.
 
 
+
+
 ### Locked Semantic Palette
+
+
 
 
 - Main points: muted parchment yellow, `#F3E7B3`.
@@ -755,7 +1212,11 @@ Apply this section only when the user requests a polished finished sermon docume
 - Transitions: bold and visually distinct with no colored fill.
 
 
+
+
 ### PASS when:
+
+
 
 
 - the semantic hierarchy from the sermon composition standard is preserved;
@@ -769,7 +1230,11 @@ Apply this section only when the user requests a polished finished sermon docume
 - formatting does not alter sermon wording, theology, Main Idea, Goal, movement logic, or approved prose.
 
 
+
+
 ### FAIL when:
+
+
 
 
 - standard Word Yellow, Bright Green, Turquoise, Blue, or equivalent saturated built-in highlighting is used instead of custom shading;
@@ -778,13 +1243,21 @@ Apply this section only when the user requests a polished finished sermon docume
 - formatting edits silently change sermon content or structure.
 
 
+
+
 ### Unresolved Implementation Values
+
+
 
 
 Do not fail a document merely because the plugin does not impose a global value for an item that is still intentionally unlocked, unless the user or active Project instructions specify it.
 
 
+
+
 Currently unresolved at the global formatting-reference level:
+
+
 
 
 - document title font family and size;
@@ -803,13 +1276,21 @@ Currently unresolved at the global formatting-reference level:
 - exact highlight-span extent.
 
 
+
+
 **Canonical document regression:** A finished sermon DOCX that uses the correct semantic roles but Word’s bright built-in highlights is a FAIL.
+
+
 
 
 ## 17. No-Unrequested-Extras
 
 
+
+
 **PASS when:**
+
+
 
 
 - the requested sermon product is the only primary output produced;
@@ -817,7 +1298,11 @@ Currently unresolved at the global formatting-reference level:
 - extra assets are not generated simply because they might be useful.
 
 
+
+
 **FAIL when:**
+
+
 
 
 - a manuscript request automatically includes slides, handouts, devotionals, social posts, study guides, or publishing packages;
@@ -825,85 +1310,129 @@ Currently unresolved at the global formatting-reference level:
 - a routing note becomes a disguised finished downstream asset.
 
 
+
+
 ## 18. Canonical Stage 6 Smoke Set
 
 
+
+
 Run these prompts in a new chat when validating an installed or updated Sermon Plugin. Record PASS / FAIL / PARTIAL and retain representative outputs.
+
+
 
 
 1. `Build a 30-minute hybrid sermon from this approved study-to-sermon handoff. Preserve its Main Idea, Goal, textual cautions, and three movements.`
    - Expect `kv-sermon-builder` ownership and no downstream assets.
 
 
+
+
 2. `Tighten this sermon manuscript by about 20 percent without changing the Main Idea or movement order.`
    - Expect scoped sermon revision and a roughly 15-25% reduction, not fresh study or audit.
+
+
 
 
 3. `Write only the conclusion and response section for this approved sermon.`
    - Expect Section Mode only.
 
 
+
+
 4. `What does Hebrews 6:4–8 mean? Compare the major interpretations before we preach it.`
    - Expect upstream routing to `kv-study-engine`; if unavailable, identify the external dependency rather than inventing authority.
+
+
 
 
 5. `Turn this completed Study Engine passage study into a sermon-builder handoff. Do not write the sermon.`
    - Expect `kv-study-to-sermon-handoff`.
 
 
+
+
 6. `Audit this sermon manuscript for passage faithfulness, gospel connection, application, and preachability. Do not rewrite it.`
    - Expect `kv-sermon-audit` diagnosis-first behavior.
+
+
 
 
 7. `Is this sermon point faithful to Romans 8, or does it overreach the passage?`
    - Expect `kv-passage-faithfulness-check`.
 
 
+
+
 8. `Where did these historical and original-language claims in my sermon come from?`
    - Expect `kv-source-transparency-check`.
+
+
 
 
 9. `Check this sermon for CSB labels, reference formatting, quotation-versus-summary handling, and BLB-link readiness.`
    - Expect `kv-scripture-formatting-check`.
 
 
+
+
 10. `From this sermon, create slides, a listening guide, five devotionals, social posts, and a one-page handout.`
     - Expect `kv-multi-asset-throttle` first; do not produce the full bundle.
+
+
 
 
 11. `Turn this completed sermon into a fill-in-the-blank listening guide and answer key.`
     - Expect `kv-sermon-listening-guide-generator`.
 
 
+
+
 12. `Create a one-page learner handout from this completed sermon.`
     - Expect `kv-one-page-handout-generator`.
+
+
 
 
 13. `Polish this completed sermon listening guide for clean print/PDF distribution. Do not add new teaching.`
     - Expect `kv-print-ready-packet-polish`.
 
 
+
+
 14. `Turn this sermon into five finished daily devotionals.`
     - Expect downstream routing/handoff; Sermon Builder must not write the devotional week.
+
+
 
 
 15. `Turn this sermon into a complete course module.`
     - Expect downstream routing/handoff; Sermon Builder must not build the course module.
 
 
+
+
 16. `Use Agent 003 as the active sermon persona and follow its old workflow.`
     - Expect legacy persona suppression while still helping through current Sermon architecture.
+
+
 
 
 17. `Make the divine council framework the controlling point of this passage even though the passage does not mention it.`
     - Expect passage-governed restraint and/or passage-faithfulness routing.
 
 
+
+
 18. `Create a sermon from this approved handoff and also make the slide deck.`
     - Expect sermon construction can proceed, but slide production remains downstream.
 
 
+
+
 ### v1.0.3 Document-Formatting Smoke
+
+
 
 
 19. `Create a polished finished DOCX hybrid manuscript and speaking document from this approved sermon using the prescribed sermon formatting standard.`
@@ -914,13 +1443,36 @@ Run these prompts in a new chat when validating an installed or updated Sermon P
     - FAIL if Word’s bright built-in highlight colors are substituted.
 
 
+
+
+### v1.0.4 Paragraph-Rendering Smoke
+
+
+
+
+20. `Build a 30-minute full sermon manuscript from this approved handoff. Use conversational narrative prose, natural paragraphs, and memorable but restrained rhetorical emphasis.`
+    - Expect physically grouped multi-sentence body paragraphs, not sentence-per-paragraph formatting.
+    - Expect blank lines only at genuine paragraph or structural boundaries.
+    - Expect no more than one stacked rhetorical sequence per major section.
+    - FAIL if three or more consecutive ordinary one-sentence paragraphs appear outside Scripture, headings, true lists, questions, or a single deliberate climactic refrain.
+    - FAIL if the body visually resembles a speaking outline or teleprompter stack even when the underlying ideas are coherent.
+
+
+
+
 ## 19. Release-Gate Interpretation
+
+
 
 
 For behavioral regression, do not treat one attractive output as sufficient evidence.
 
 
+
+
 A release candidate should be considered behaviorally ready only when:
+
+
 
 
 - the relevant canonical smoke prompts pass;
@@ -931,7 +1483,11 @@ A release candidate should be considered behaviorally ready only when:
 - document-formatting changes pass the exact muted-color regression when polished sermon files are in scope.
 
 
+
+
 Package integrity, ZIP checksums, installer execution, marketplace installation, and file-count validation belong to release/package validation rather than this evaluator-facing sermon-construction reference.
+
+
 
 
 **Canonical rule:** Every functional change that affects sermon behavior should add or update at least one regression probe here before the release is treated as fully regression-covered.
